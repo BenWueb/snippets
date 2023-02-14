@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+:root {
+  --fs-400: clamp(3rem, 12vw + 1rem, 6.5rem);
+  --fs-600: clamp(2rem, 6vw + 1rem, 4rem);
+  --fs-800: clamp(1rem, 6vw + 0.5rem, 4rem);
+  --fs-900: clamp(0.5rem, 4vw + 0.5rem, 2.5rem);
+  --fs-1000: clamp(0.75rem, 1vw + 0.25rem, 1.5rem);
+  --fs-1200: clamp(0.75rem, 1vw + 0.25rem, 1rem);
+  --font: "Poppins", sans-serif;
+  --secondary-dark: #ed6a5aff;
+  --secondary: #f4f1bbff;
+  --primary-light: #9bc1bcff;
+  --primary: #5ca4a9ff;
+  --background: #e6ebe0ff;
+  --bs: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #5ca4a9ff;
+  --toastify-color-warning: #f4f1bbff;
+  --toastify-color-error: #ed6a5aff;
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+}
+
+body {
+  font-family: var(--font);
+  font-size: (--fs-600);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+.container {
+  margin: auto;
+  padding: 0 2rem;
+  max-width: 2000px;
+}
+
+.page-container {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.btn {
+  padding: 1em 3em;
+  font-size: var(--fs-1000);
+  box-shadow: var(--bs);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+button:focus {
+  outline: none;
+}
