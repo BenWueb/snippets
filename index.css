@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap"); */
 
 * {
   margin: 0;
@@ -8,42 +8,54 @@
 }
 
 :root {
-  --fs-400: clamp(3rem, 12vw + 1rem, 6.5rem);
+  --fs-200: clamp(4rem, 10vw + 1rem, 12rem);
+  --fs-300: clamp(3rem, 8vw + 1rem, 10rem);
+  --fs-400: clamp(2.5rem, 8vw + 1rem, 6rem);
   --fs-600: clamp(2rem, 6vw + 1rem, 4rem);
   --fs-800: clamp(1rem, 6vw + 0.5rem, 3rem);
-  --fs-900: clamp(1rem, 4vw + 0.5rem, 2rem);
-  --fs-1000: clamp(1rem, 1vw + 0.25rem, 1.5rem);
-  --fs-1100: clamp(1rem, 1vw + 0.25rem, 1rem);
-  --fs-1200: clamp(0.75rem, 1vw + 0.25rem, 0.8rem);
-  --font: "Poppins", sans-serif;
-  --secondary-dark: #ed6a5aff;
-  --secondary: #03dac5;
-  --primary: #bb86fc;
+  --fs-900: clamp(1rem, 4vw + 0.5rem, 1.75rem);
+  --fs-1000: clamp(1rem, 1vw + 0.25rem, 1.25rem);
+  --fs-1200: clamp(0.75rem, 1vw + 0.25rem, 1rem);
+  --font: "Montserrat", sans-serif;
+  --alt-font: "Dancing Script", Montserrat, sans-serif;
+  --font-color: rgb(39, 39, 39);
+  --secondary-font-color: rgb(82, 82, 82);
+  --accent: #52b788;
+  --secondary: #52b788;
+  --primary: #40916c;
   --background: #121212;
-  --overlay-5: rgb(25, 25, 25);
+  --section-padding: 100px 0;
+  --overlay-5: rgb(68, 68, 68);
   --overlay-7: rgb(45, 45, 45);
   --overlay-9: rgba(255, 255, 255, 0.09);
   --overlay-12: rgba(255, 255, 255, 0.12);
   --overlay-16: rgba(255, 255, 255, 0.16);
+  --bs-hover: rgba(0, 0, 0, 0.25) 0px 24px 48px,
+    rgba(0, 0, 0, 0.22) 0px 20px 20px;
   --bs: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  --toastify-color-info: #3498db;
-  --toastify-color-success: #5ca4a9ff;
-  --toastify-color-warning: #f4f1bbff;
-  --toastify-color-error: #ed6a5aff;
-  --toastify-icon-color-info: var(--toastify-color-info);
-  --toastify-icon-color-success: var(--toastify-color-success);
-  --toastify-icon-color-warning: var(--toastify-color-warning);
-  --toastify-icon-color-error: var(--toastify-color-error);
+}
+
+main {
+  position: relative;
+}
+
+.gradient {
+  background-image: linear-gradient(
+    to right top,
+    #52b788,
+    #219c8d,
+    #0f8086,
+    #246374,
+    #2f4858
+  );
 }
 
 body {
-  font-family: var(--font);
+  font-family: "Montserrat", sans-serif;
   font-size: (--fs-600);
+  font-weight: 300;
+  text-rendering: geometricPrecision;
   -webkit-font-smoothing: subpixel-antialiased;
-}
-
-a {
-  text-decoration: none;
 }
 
 a:focus {
@@ -52,8 +64,8 @@ a:focus {
 
 .container {
   margin: auto;
-  padding: 0 2rem;
-  max-width: 2000px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .page-container {
@@ -69,21 +81,34 @@ a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
   display: inline-block;
   border: none;
   font-family: inherit;
   cursor: pointer;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
 }
 
-button:hover {
-  transform: scale(1.05);
+.btn:hover {
+  transform: scale(1.02);
   opacity: 0.9;
+  box-shadow: var(--bs-hover);
 }
 
 button:focus {
   outline: none;
+}
+
+.btn-hover {
+  transition: all 0.2s ease-in;
+}
+
+.btn-hover:hover {
+  background-color: var(--primary);
+  color: white;
 }
 
 img {
@@ -91,33 +116,48 @@ img {
   width: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
 li {
   list-style-type: none;
+  position: relative;
 }
 
 h1 {
   font-size: var(--fs-400);
-  line-height: 5rem;
+  line-height: 1.1;
 }
 
 h2 {
   font-size: var(--fs-600);
-  line-height: 4rem;
+  line-height: 1.25;
+  font-weight: 400;
 }
 
 h3 {
   font-size: var(--fs-800);
-  line-height: 2.5rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 300;
 }
 
 h4 {
   font-size: var(--fs-900);
+  font-weight: 400;
 }
 
 h5 {
   font-size: var(--fs-1000);
+  font-weight: 300;
 }
 
 p {
-  font-size: var(--fs-1200);
+  font-size: var(--fs-1000);
+  line-height: 1.75;
+  font-weight: 300;
 }

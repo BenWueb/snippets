@@ -1,0 +1,137 @@
+.form {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  gap: 20px;
+
+  @media screen and (max-width: 430px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 30px 10px;
+  }
+
+  @media screen and (max-width: 810px) {
+  }
+
+  h3 {
+    position: relative;
+  }
+
+  h3::before {
+    content: "";
+    position: absolute;
+    background-color: var(--accent);
+    height: 100%;
+    width: 10px;
+    left: -20px;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    outline: none;
+    padding: 10px;
+    font-family: inherit;
+    font-size: var(--900);
+    border-radius: 10px;
+    border: none;
+  }
+
+  textarea {
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    font-family: inherit;
+    font-size: var(--900);
+    border-radius: 10px;
+    border: none;
+    resize: none;
+    height: 130px;
+  }
+
+  button {
+    margin-top: 10px;
+    background-color: var(--accent);
+    width: 100%;
+    grid-column: span 2;
+  }
+}
+
+.checkboxes {
+  margin-top: 20%;
+
+  @media screen and (max-width: 430px) {
+    margin-top: 0;
+    padding: 0 20px 20px;
+  }
+}
+
+.checkbox {
+  span {
+    font-weight: bold;
+  }
+
+  label {
+    font-size: var(--fs-1200);
+    color: white;
+  }
+  input {
+    width: auto;
+    margin-right: 20px;
+  }
+
+  p {
+    margin: 20px 0;
+    color: white;
+  }
+}
+
+.inputArea {
+  padding: 20px;
+
+  h4 {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto 20px;
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 80px;
+  border-radius: 10px;
+
+  @media screen and (max-width: 430px) {
+    padding: 40px;
+    text-align: center;
+  }
+
+  h3 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--secondary);
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
